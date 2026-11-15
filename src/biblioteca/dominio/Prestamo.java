@@ -64,6 +64,14 @@ public class Prestamo {
 
     // Getters y Setters
     public Long getId() { return id; }
+    public void setId(Long id) {
+        if (id == null || id < 1) throw new IllegalArgumentException("ID inválido");
+        this.id = id;
+        asegurarSiguienteId(id + 1);
+    }
+    public static synchronized void asegurarSiguienteId(long siguiente) {
+        contadorId = Math.max(contadorId, siguiente);
+    }
     public Libro getLibro() { return libro; }
     public String getPrestatario() { return prestatario; }
     public void setPrestatario(String prestatario) { this.prestatario = prestatario; }
