@@ -44,3 +44,8 @@ local.properties
 *.iml
 .local-build/
 # local-development:end
+
+# Biblioteca JDBC local y respaldos de datos
+/data/
+*.mv.db
+*.trace.db
